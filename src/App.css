@@ -1,0 +1,127 @@
+/* --------------------------------Variables --------------------------------*/
+:root {
+  --spacing: 5px;
+  --font-family: 'Amazon Ember',arial,sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  color: #000;
+  margin: 0;
+  text-align: center;
+  background: #fafafa
+}
+
+
+.game-grid__container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 20px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: grid;
+}
+
+.square {
+  border-radius: 14px;
+  border-color: #000;
+  font-family: var(--font-family);
+  background: #eaeded;
+  color: #000;
+  font-weight: bold;
+  font-size: 8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--spacing);
+}
+
+.disabled .square {
+  cursor: default;
+}
+
+.disabled .square:hover {
+  background: #eaeded;
+  color: #000;
+}
+
+.square:hover {
+  background: #ec7211;
+}
+
+.square.disabled {
+  cursor: default;
+}
+
+.square.disabled:hover {
+  background: #eaeded;
+  color: #000;
+}
+
+.square.winning {
+  background: #ec7211;
+  cursor: default;
+}
+
+.square.winning:hover {
+  background: #ec7211;
+}
+
+.game-board {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;  
+  color: #fff;  
+  grid-gap: 2px 2px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.game-button  {
+    background-color: #ec7211;
+    border: 1px solid #ec7211;
+    border-radius: 2px;
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 700;
+    margin: 11px 2px;
+    padding: 0 16px;
+    line-height: 27px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    height: fit-content;
+    width: fit-content;
+}
+
+.game-button.current-move {
+  background: #eb5f07;
+}
+
+.game-button:hover {
+  background: #eb5f07;
+}
+
+.game-history__section {
+  margin-top: 40px;
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  max-width: 150px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-history__list {
+  list-style: none inside;
+}
+
+.game-info {
+  font-weight: bold;
+  font-size: 24px;
+}
